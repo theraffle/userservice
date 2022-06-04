@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "github.com/theraffle/backend/proto";
+
+service UserManager {
+  rpc CreateUser (CreateUserRequest) returns (Error) {}
+  rpc GetUser (GetUserRequest) returns (GetUserResponse) {}
+  rpc LoginUser (LoginUserRequest) returns (Error) {}
+  rpc LogoutUser (LogoutUserRequest) returns (Error) {}
+}
+
+message CreateUserRequest {
+  string id = 1;
+  LoginType loginType = 2;
+}
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message GetUserResponse {
+  string id = 1;
+  LoginType loginType = 2;
+  repeated string wallets = 3;
+  repeated string projects = 4;
+  string twitterID = 5;
+}
+
+message LoginUserRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LogoutUserRequest {
+  string id = 1;
+}
+
+message Error {
+  optional int32 code = 1;
+  optional string message = 2;
+}
+
+enum LoginType {
+  DISCORD = 0;
+  TELEGRAM = 1;
+}
