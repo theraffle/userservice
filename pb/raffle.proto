@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package proto;
-option go_package = "github.com/theraffle/backend/proto";
+package pb;
+option go_package = "github.com/theraffle/frontservice/pb";
 
-service UserManager {
+service UserService {
   rpc CreateUser (CreateUserRequest) returns (Error) {}
   rpc GetUser (GetUserRequest) returns (GetUserResponse) {}
   rpc LoginUser (LoginUserRequest) returns (Error) {}
