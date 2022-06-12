@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
 	"github.com/theraffle/backend/src/genproto/pb"
 	"github.com/theraffle/backend/src/internal/database"
@@ -18,9 +19,10 @@ import (
 )
 
 var (
-	setupLog = ctrl.Log.WithName("setup")
-	log      = logf.Log.WithName("user-service")
-	port     = "3550"
+	setupLog  = ctrl.Log.WithName("setup")
+	log       = logf.Log.WithName("user-service")
+	port      = "3550"
+	loginType = []string{"discord", "telegram", "twitter"}
 )
 
 func main() {
@@ -67,12 +69,46 @@ func run(port string) {
 type userService struct{}
 
 func (u *userService) CreateUser(ctx context.Context, request *pb.CreateUserRequest) (*pb.GetUserResponse, error) {
-	log.Info("test")
-	_, err := database.Connect()
+	db, err := database.Connect()
 	if err != nil {
+		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, "DB connection Error")
 	}
-	return nil, nil
+	defer db.Close()
+
+	var id int
+	var result sql.Result
+
+	// TODO use MySQL's unique function
+	query := fmt.Sprintf("SELECT id FROM user WHERE %s = '%s'", loginType[request.LoginType], request.UserID)
+	err = db.QueryRowContext(ctx, query).Scan(&id)
+	if err == sql.ErrNoRows {
+		query = fmt.Sprintf("INSERT INTO user(type, %s) VALUES(%d, '%s')", loginType[request.LoginType], request.LoginType, request.UserID)
+		result, err = db.ExecContext(ctx, query)
+		if err != nil {
+			log.Error(err, "create user error")
+			return nil, status.Errorf(codes.Internal, "create user error")
+		}
+		n, err := result.RowsAffected()
+		if err != nil {
+			return nil, status.Errorf(codes.Internal, err.Error())
+		}
+		if n == 1 {
+			response := &pb.GetUserResponse{}
+			query = fmt.Sprintf("SELECT * FROM user WHERE %s = '%s'", loginType[request.LoginType], request.UserID)
+			if err = db.QueryRowContext(ctx, query).Scan(&response.UserID, &response.LoginType, &response.TelegramID, &response.DiscordID, &response.TwitterID); err != nil {
+				return nil, status.Errorf(codes.Internal, err.Error())
+			}
+			return response, nil
+		}
+	}
+
+	if err == nil {
+		log.Info("exising id error")
+		return nil, status.Errorf(codes.InvalidArgument, "already registered id")
+	}
+	log.Error(err, "")
+	return nil, status.Errorf(codes.Internal, err.Error())
 }
 
 func (u *userService) GetUser(ctx context.Context, request *pb.GetUserRequest) (*pb.GetUserResponse, error) {
@@ -81,8 +117,38 @@ func (u *userService) GetUser(ctx context.Context, request *pb.GetUserRequest) (
 }
 
 func (u *userService) LoginUser(ctx context.Context, request *pb.LoginUserRequest) (*pb.GetUserResponse, error) {
-	//TODO implement me
-	panic("implement me")
+	db, err := database.Connect()
+	if err != nil {
+		log.Error(err, "database connection error")
+		return nil, status.Errorf(codes.NotFound, "DB connection Error")
+	}
+	defer db.Close()
+
+	if request.LoginType > 2 {
+		err = fmt.Errorf("wrong login type")
+		log.Error(err, "")
+		return nil, status.Errorf(codes.InvalidArgument, "wrong login type")
+	}
+
+	query := fmt.Sprintf("SELECT * FROM user WHERE type = %d AND %s = '%s'", request.LoginType, loginType[request.LoginType], request.UserID)
+	row := db.QueryRowContext(ctx, query)
+
+	response := &pb.GetUserResponse{}
+
+	err = row.Scan(&response.UserID, &response.LoginType, &response.TelegramID, &response.DiscordID, &response.TwitterID)
+
+	if err == sql.ErrNoRows {
+		return u.CreateUser(ctx, &pb.CreateUserRequest{
+			UserID:    request.GetUserID(),
+			LoginType: request.GetLoginType(),
+		})
+	}
+	if err != nil {
+		log.Error(err, "")
+		return nil, status.Errorf(codes.InvalidArgument, "scan error")
+	}
+	// TODO implement login
+	return response, nil
 }
 
 func (u *userService) LogoutUser(ctx context.Context, request *pb.LogoutUserRequest) (*pb.Empty, error) {

@@ -64,13 +64,13 @@ message UpdateUserWalletRequest {
 }
 
 message UpdateUserProjectRequest {
-  int64 id = 1;
+  int64 userID = 1;
   int64 projectID = 2;
   int64 walletID = 3;
 }
 
 message LoginUserRequest {
-  string id = 1;
+  string userID = 1;
   LoginType loginType = 2;
 }
 
