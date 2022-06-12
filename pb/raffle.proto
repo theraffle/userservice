@@ -1,47 +1,87 @@
 syntax = "proto3";
 
 package pb;
-option go_package = "github.com/theraffle/frontservice/pb";
+option go_package = "github.com/theraffle/pb";
+
+// -----------------User Service--------------------
 
 service UserService {
-  rpc CreateUser (CreateUserRequest) returns (Error) {}
+  rpc CreateUser (CreateUserRequest) returns (GetUserResponse) {}
   rpc GetUser (GetUserRequest) returns (GetUserResponse) {}
-  rpc LoginUser (LoginUserRequest) returns (Error) {}
-  rpc LogoutUser (LogoutUserRequest) returns (Error) {}
+  rpc GetUserWallet (GetUserWalletRequest) returns (GetUserWalletResponse) {}
+  rpc GetUserProject (GetUserProjectResponse) returns (GetUserProjectResponse) {}
+  rpc UpdateUser (UpdateUserRequest) returns (GetUserResponse) {}
+  rpc UpdateUserWallet (UpdateUserWalletRequest) returns (GetUserWalletRequest) {}
+  rpc UpdateUserProject (UpdateUserProjectRequest) returns (GetUserProjectResponse) {}
+  rpc LoginUser (LoginUserRequest) returns (GetUserResponse) {}
+  rpc LogoutUser (LogoutUserRequest) returns (Empty) {}
 }
 
 message CreateUserRequest {
-  string id = 1;
+  string userID = 1;
   LoginType loginType = 2;
 }
 
 message GetUserRequest {
-  string id = 1;
+  int64 userID = 1;
 }
 
 message GetUserResponse {
-  string id = 1;
+  int64 userID = 1;
   LoginType loginType = 2;
-  repeated string wallets = 3;
-  repeated string projects = 4;
+  string telegramID = 3;
+  string discordID = 4;
   string twitterID = 5;
 }
 
+message GetUserWalletRequest {
+  int64 userID = 1;
+}
+
+message GetUserWalletResponse {
+  repeated string wallets = 1;
+}
+
+message GetUserProjectRequest {
+  int64 userID = 1;
+}
+
+message GetUserProjectResponse {
+  repeated string projects = 1;
+}
+
+message UpdateUserRequest {
+  int64 userID = 1;
+  string telegramID = 2;
+  string discordID = 3;
+  string twitterID = 4;
+}
+
+message UpdateUserWalletRequest {
+  int64 userID = 1;
+  int64 chainID = 2;
+  string address = 3;
+}
+
+message UpdateUserProjectRequest {
+  int64 id = 1;
+  int64 projectID = 2;
+  int64 walletID = 3;
+}
+
 message LoginUserRequest {
-  string email = 1;
-  string password = 2;
+  string id = 1;
+  LoginType loginType = 2;
 }
 
 message LogoutUserRequest {
-  string id = 1;
+  int64 userID = 1;
 }
 
-message Error {
-  optional int32 code = 1;
-  optional string message = 2;
-}
+message Empty {}
 
 enum LoginType {
   DISCORD = 0;
   TELEGRAM = 1;
+  TWITTER = 2;
 }
