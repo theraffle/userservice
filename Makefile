@@ -17,4 +17,4 @@ docker-push:
 
 # Test code lint
 test-lint:
-	golint ./...
+	golangci-lint run ./... -v

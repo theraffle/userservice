@@ -254,194 +254,6 @@ func (x *GetUserResponse) GetTwitterID() string {
 	return ""
 }
 
-type GetUserWalletRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	UserID int64 `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
-}
-
-func (x *GetUserWalletRequest) Reset() {
-	*x = GetUserWalletRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetUserWalletRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetUserWalletRequest) ProtoMessage() {}
-
-func (x *GetUserWalletRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetUserWalletRequest.ProtoReflect.Descriptor instead.
-func (*GetUserWalletRequest) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *GetUserWalletRequest) GetUserID() int64 {
-	if x != nil {
-		return x.UserID
-	}
-	return 0
-}
-
-type GetUserWalletResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Wallets []string `protobuf:"bytes,1,rep,name=wallets,proto3" json:"wallets,omitempty"`
-}
-
-func (x *GetUserWalletResponse) Reset() {
-	*x = GetUserWalletResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetUserWalletResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetUserWalletResponse) ProtoMessage() {}
-
-func (x *GetUserWalletResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetUserWalletResponse.ProtoReflect.Descriptor instead.
-func (*GetUserWalletResponse) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *GetUserWalletResponse) GetWallets() []string {
-	if x != nil {
-		return x.Wallets
-	}
-	return nil
-}
-
-type GetUserProjectRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	UserID int64 `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
-}
-
-func (x *GetUserProjectRequest) Reset() {
-	*x = GetUserProjectRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetUserProjectRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetUserProjectRequest) ProtoMessage() {}
-
-func (x *GetUserProjectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetUserProjectRequest.ProtoReflect.Descriptor instead.
-func (*GetUserProjectRequest) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *GetUserProjectRequest) GetUserID() int64 {
-	if x != nil {
-		return x.UserID
-	}
-	return 0
-}
-
-type GetUserProjectResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Projects []string `protobuf:"bytes,1,rep,name=projects,proto3" json:"projects,omitempty"`
-}
-
-func (x *GetUserProjectResponse) Reset() {
-	*x = GetUserProjectResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GetUserProjectResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetUserProjectResponse) ProtoMessage() {}
-
-func (x *GetUserProjectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetUserProjectResponse.ProtoReflect.Descriptor instead.
-func (*GetUserProjectResponse) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *GetUserProjectResponse) GetProjects() []string {
-	if x != nil {
-		return x.Projects
-	}
-	return nil
-}
-
 type UpdateUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -456,7 +268,7 @@ type UpdateUserRequest struct {
 func (x *UpdateUserRequest) Reset() {
 	*x = UpdateUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[7]
+		mi := &file_pb_raffle_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -469,7 +281,7 @@ func (x *UpdateUserRequest) String() string {
 func (*UpdateUserRequest) ProtoMessage() {}
 
 func (x *UpdateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[7]
+	mi := &file_pb_raffle_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -482,7 +294,7 @@ func (x *UpdateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUserRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUserRequest) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{7}
+	return file_pb_raffle_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdateUserRequest) GetUserID() int64 {
@@ -513,7 +325,7 @@ func (x *UpdateUserRequest) GetTwitterID() string {
 	return ""
 }
 
-type UpdateUserWalletRequest struct {
+type UserWallet struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -523,8 +335,213 @@ type UpdateUserWalletRequest struct {
 	Address string `protobuf:"bytes,3,opt,name=address,proto3" json:"address,omitempty"`
 }
 
-func (x *UpdateUserWalletRequest) Reset() {
-	*x = UpdateUserWalletRequest{}
+func (x *UserWallet) Reset() {
+	*x = UserWallet{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pb_raffle_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserWallet) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserWallet) ProtoMessage() {}
+
+func (x *UserWallet) ProtoReflect() protoreflect.Message {
+	mi := &file_pb_raffle_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserWallet.ProtoReflect.Descriptor instead.
+func (*UserWallet) Descriptor() ([]byte, []int) {
+	return file_pb_raffle_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *UserWallet) GetUserID() int64 {
+	if x != nil {
+		return x.UserID
+	}
+	return 0
+}
+
+func (x *UserWallet) GetChainID() int64 {
+	if x != nil {
+		return x.ChainID
+	}
+	return 0
+}
+
+func (x *UserWallet) GetAddress() string {
+	if x != nil {
+		return x.Address
+	}
+	return ""
+}
+
+type CreateUserWalletRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Wallet *UserWallet `protobuf:"bytes,1,opt,name=wallet,proto3" json:"wallet,omitempty"`
+}
+
+func (x *CreateUserWalletRequest) Reset() {
+	*x = CreateUserWalletRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pb_raffle_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateUserWalletRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateUserWalletRequest) ProtoMessage() {}
+
+func (x *CreateUserWalletRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_pb_raffle_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateUserWalletRequest.ProtoReflect.Descriptor instead.
+func (*CreateUserWalletRequest) Descriptor() ([]byte, []int) {
+	return file_pb_raffle_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *CreateUserWalletRequest) GetWallet() *UserWallet {
+	if x != nil {
+		return x.Wallet
+	}
+	return nil
+}
+
+type GetUserWalletRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserID int64 `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
+}
+
+func (x *GetUserWalletRequest) Reset() {
+	*x = GetUserWalletRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pb_raffle_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetUserWalletRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserWalletRequest) ProtoMessage() {}
+
+func (x *GetUserWalletRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_pb_raffle_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserWalletRequest.ProtoReflect.Descriptor instead.
+func (*GetUserWalletRequest) Descriptor() ([]byte, []int) {
+	return file_pb_raffle_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetUserWalletRequest) GetUserID() int64 {
+	if x != nil {
+		return x.UserID
+	}
+	return 0
+}
+
+type GetUserWalletResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Wallets []*UserWallet `protobuf:"bytes,1,rep,name=wallets,proto3" json:"wallets,omitempty"`
+}
+
+func (x *GetUserWalletResponse) Reset() {
+	*x = GetUserWalletResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pb_raffle_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetUserWalletResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserWalletResponse) ProtoMessage() {}
+
+func (x *GetUserWalletResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_pb_raffle_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserWalletResponse.ProtoReflect.Descriptor instead.
+func (*GetUserWalletResponse) Descriptor() ([]byte, []int) {
+	return file_pb_raffle_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetUserWalletResponse) GetWallets() []*UserWallet {
+	if x != nil {
+		return x.Wallets
+	}
+	return nil
+}
+
+type CreateUserProjectRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserID    int64  `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
+	ProjectID int64  `protobuf:"varint,2,opt,name=projectID,proto3" json:"projectID,omitempty"`
+	ChainID   int64  `protobuf:"varint,3,opt,name=chainID,proto3" json:"chainID,omitempty"`
+	Address   string `protobuf:"bytes,4,opt,name=address,proto3" json:"address,omitempty"`
+}
+
+func (x *CreateUserProjectRequest) Reset() {
+	*x = CreateUserProjectRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_pb_raffle_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -532,13 +549,13 @@ func (x *UpdateUserWalletRequest) Reset() {
 	}
 }
 
-func (x *UpdateUserWalletRequest) String() string {
+func (x *CreateUserProjectRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateUserWalletRequest) ProtoMessage() {}
+func (*CreateUserProjectRequest) ProtoMessage() {}
 
-func (x *UpdateUserWalletRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateUserProjectRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_pb_raffle_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -550,44 +567,49 @@ func (x *UpdateUserWalletRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateUserWalletRequest.ProtoReflect.Descriptor instead.
-func (*UpdateUserWalletRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateUserProjectRequest.ProtoReflect.Descriptor instead.
+func (*CreateUserProjectRequest) Descriptor() ([]byte, []int) {
 	return file_pb_raffle_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *UpdateUserWalletRequest) GetUserID() int64 {
+func (x *CreateUserProjectRequest) GetUserID() int64 {
 	if x != nil {
 		return x.UserID
 	}
 	return 0
 }
 
-func (x *UpdateUserWalletRequest) GetChainID() int64 {
+func (x *CreateUserProjectRequest) GetProjectID() int64 {
+	if x != nil {
+		return x.ProjectID
+	}
+	return 0
+}
+
+func (x *CreateUserProjectRequest) GetChainID() int64 {
 	if x != nil {
 		return x.ChainID
 	}
 	return 0
 }
 
-func (x *UpdateUserWalletRequest) GetAddress() string {
+func (x *CreateUserProjectRequest) GetAddress() string {
 	if x != nil {
 		return x.Address
 	}
 	return ""
 }
 
-type UpdateUserProjectRequest struct {
+type GetUserProjectRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserID    int64 `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
-	ProjectID int64 `protobuf:"varint,2,opt,name=projectID,proto3" json:"projectID,omitempty"`
-	WalletID  int64 `protobuf:"varint,3,opt,name=walletID,proto3" json:"walletID,omitempty"`
+	UserID int64 `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
 }
 
-func (x *UpdateUserProjectRequest) Reset() {
-	*x = UpdateUserProjectRequest{}
+func (x *GetUserProjectRequest) Reset() {
+	*x = GetUserProjectRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_pb_raffle_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -595,13 +617,13 @@ func (x *UpdateUserProjectRequest) Reset() {
 	}
 }
 
-func (x *UpdateUserProjectRequest) String() string {
+func (x *GetUserProjectRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateUserProjectRequest) ProtoMessage() {}
+func (*GetUserProjectRequest) ProtoMessage() {}
 
-func (x *UpdateUserProjectRequest) ProtoReflect() protoreflect.Message {
+func (x *GetUserProjectRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_pb_raffle_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -613,30 +635,63 @@ func (x *UpdateUserProjectRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateUserProjectRequest.ProtoReflect.Descriptor instead.
-func (*UpdateUserProjectRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetUserProjectRequest.ProtoReflect.Descriptor instead.
+func (*GetUserProjectRequest) Descriptor() ([]byte, []int) {
 	return file_pb_raffle_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *UpdateUserProjectRequest) GetUserID() int64 {
+func (x *GetUserProjectRequest) GetUserID() int64 {
 	if x != nil {
 		return x.UserID
 	}
 	return 0
 }
 
-func (x *UpdateUserProjectRequest) GetProjectID() int64 {
-	if x != nil {
-		return x.ProjectID
-	}
-	return 0
+type GetUserProjectResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Projects []int64 `protobuf:"varint,1,rep,packed,name=projects,proto3" json:"projects,omitempty"`
 }
 
-func (x *UpdateUserProjectRequest) GetWalletID() int64 {
-	if x != nil {
-		return x.WalletID
+func (x *GetUserProjectResponse) Reset() {
+	*x = GetUserProjectResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pb_raffle_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
 	}
-	return 0
+}
+
+func (x *GetUserProjectResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserProjectResponse) ProtoMessage() {}
+
+func (x *GetUserProjectResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_pb_raffle_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserProjectResponse.ProtoReflect.Descriptor instead.
+func (*GetUserProjectResponse) Descriptor() ([]byte, []int) {
+	return file_pb_raffle_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *GetUserProjectResponse) GetProjects() []int64 {
+	if x != nil {
+		return x.Projects
+	}
+	return nil
 }
 
 type LoginUserRequest struct {
@@ -651,7 +706,7 @@ type LoginUserRequest struct {
 func (x *LoginUserRequest) Reset() {
 	*x = LoginUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[10]
+		mi := &file_pb_raffle_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -664,7 +719,7 @@ func (x *LoginUserRequest) String() string {
 func (*LoginUserRequest) ProtoMessage() {}
 
 func (x *LoginUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[10]
+	mi := &file_pb_raffle_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -677,7 +732,7 @@ func (x *LoginUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginUserRequest.ProtoReflect.Descriptor instead.
 func (*LoginUserRequest) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{10}
+	return file_pb_raffle_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *LoginUserRequest) GetUserID() string {
@@ -694,6 +749,53 @@ func (x *LoginUserRequest) GetLoginType() LoginType {
 	return LoginType_DISCORD
 }
 
+type LoginUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserID int64 `protobuf:"varint,1,opt,name=userID,proto3" json:"userID,omitempty"`
+}
+
+func (x *LoginUserResponse) Reset() {
+	*x = LoginUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_pb_raffle_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LoginUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoginUserResponse) ProtoMessage() {}
+
+func (x *LoginUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_pb_raffle_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoginUserResponse.ProtoReflect.Descriptor instead.
+func (*LoginUserResponse) Descriptor() ([]byte, []int) {
+	return file_pb_raffle_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *LoginUserResponse) GetUserID() int64 {
+	if x != nil {
+		return x.UserID
+	}
+	return 0
+}
+
 type LogoutUserRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -705,7 +807,7 @@ type LogoutUserRequest struct {
 func (x *LogoutUserRequest) Reset() {
 	*x = LogoutUserRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[11]
+		mi := &file_pb_raffle_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -718,7 +820,7 @@ func (x *LogoutUserRequest) String() string {
 func (*LogoutUserRequest) ProtoMessage() {}
 
 func (x *LogoutUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[11]
+	mi := &file_pb_raffle_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -731,7 +833,7 @@ func (x *LogoutUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutUserRequest.ProtoReflect.Descriptor instead.
 func (*LogoutUserRequest) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{11}
+	return file_pb_raffle_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *LogoutUserRequest) GetUserID() int64 {
@@ -750,7 +852,7 @@ type Empty struct {
 func (x *Empty) Reset() {
 	*x = Empty{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_pb_raffle_proto_msgTypes[12]
+		mi := &file_pb_raffle_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -763,7 +865,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_pb_raffle_proto_msgTypes[12]
+	mi := &file_pb_raffle_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -776,7 +878,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_pb_raffle_proto_rawDescGZIP(), []int{12}
+	return file_pb_raffle_proto_rawDescGZIP(), []int{14}
 }
 
 var File_pb_raffle_proto protoreflect.FileDescriptor
@@ -802,94 +904,101 @@ var file_pb_raffle_proto_rawDesc = []byte{
 	0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x72, 0x64, 0x49, 0x44, 0x18,
 	0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x72, 0x64, 0x49, 0x44,
 	0x12, 0x1c, 0x0a, 0x09, 0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72, 0x49, 0x44, 0x18, 0x05, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x09, 0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72, 0x49, 0x44, 0x22, 0x2e,
-	0x0a, 0x14, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x31,
-	0x0a, 0x15, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x77, 0x61, 0x6c, 0x6c, 0x65,
-	0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74,
-	0x73, 0x22, 0x2f, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a,
-	0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73,
-	0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72,
-	0x49, 0x44, 0x22, 0x34, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f,
-	0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1a, 0x0a, 0x08,
-	0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x08,
-	0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x22, 0x87, 0x01, 0x0a, 0x11, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16,
-	0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06,
-	0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a, 0x74, 0x65, 0x6c, 0x65, 0x67, 0x72,
-	0x61, 0x6d, 0x49, 0x44, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x74, 0x65, 0x6c, 0x65,
-	0x67, 0x72, 0x61, 0x6d, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x72,
-	0x64, 0x49, 0x44, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x64, 0x69, 0x73, 0x63, 0x6f,
-	0x72, 0x64, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72, 0x49,
-	0x44, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72,
-	0x49, 0x44, 0x22, 0x65, 0x0a, 0x17, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
+	0x01, 0x28, 0x09, 0x52, 0x09, 0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72, 0x49, 0x44, 0x22, 0x87,
+	0x01, 0x0a, 0x11, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1e, 0x0a, 0x0a,
+	0x74, 0x65, 0x6c, 0x65, 0x67, 0x72, 0x61, 0x6d, 0x49, 0x44, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0a, 0x74, 0x65, 0x6c, 0x65, 0x67, 0x72, 0x61, 0x6d, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09,
+	0x64, 0x69, 0x73, 0x63, 0x6f, 0x72, 0x64, 0x49, 0x44, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x09, 0x64, 0x69, 0x73, 0x63, 0x6f, 0x72, 0x64, 0x49, 0x44, 0x12, 0x1c, 0x0a, 0x09, 0x74, 0x77,
+	0x69, 0x74, 0x74, 0x65, 0x72, 0x49, 0x44, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x74,
+	0x77, 0x69, 0x74, 0x74, 0x65, 0x72, 0x49, 0x44, 0x22, 0x58, 0x0a, 0x0a, 0x55, 0x73, 0x65, 0x72,
+	0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x18,
+	0x0a, 0x07, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x49, 0x44, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x07, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x72,
+	0x65, 0x73, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x61, 0x64, 0x64, 0x72, 0x65,
+	0x73, 0x73, 0x22, 0x41, 0x0a, 0x17, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
+	0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x26, 0x0a,
+	0x06, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e,
+	0x70, 0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52, 0x06, 0x77,
+	0x61, 0x6c, 0x6c, 0x65, 0x74, 0x22, 0x2e, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
 	0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a,
 	0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75,
-	0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x49, 0x44,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x63, 0x68, 0x61, 0x69, 0x6e, 0x49, 0x44, 0x12,
-	0x18, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x07, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x22, 0x6c, 0x0a, 0x18, 0x55, 0x70, 0x64,
+	0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x41, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
+	0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x28,
+	0x0a, 0x07, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52,
+	0x07, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x73, 0x22, 0x84, 0x01, 0x0a, 0x18, 0x43, 0x72, 0x65,
 	0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x12, 0x1c, 0x0a,
 	0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x44, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03,
-	0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x44, 0x12, 0x1a, 0x0a, 0x08, 0x77,
-	0x61, 0x6c, 0x6c, 0x65, 0x74, 0x49, 0x44, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x77,
-	0x61, 0x6c, 0x6c, 0x65, 0x74, 0x49, 0x44, 0x22, 0x57, 0x0a, 0x10, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
-	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75,
-	0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65,
-	0x72, 0x49, 0x44, 0x12, 0x2b, 0x0a, 0x09, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x6f, 0x67, 0x69,
-	0x6e, 0x54, 0x79, 0x70, 0x65, 0x52, 0x09, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65,
-	0x22, 0x2b, 0x0a, 0x11, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x07, 0x0a,
-	0x05, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x2a, 0x33, 0x0a, 0x09, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x54,
-	0x79, 0x70, 0x65, 0x12, 0x0b, 0x0a, 0x07, 0x44, 0x49, 0x53, 0x43, 0x4f, 0x52, 0x44, 0x10, 0x00,
-	0x12, 0x0c, 0x0a, 0x08, 0x54, 0x45, 0x4c, 0x45, 0x47, 0x52, 0x41, 0x4d, 0x10, 0x01, 0x12, 0x0b,
-	0x0a, 0x07, 0x54, 0x57, 0x49, 0x54, 0x54, 0x45, 0x52, 0x10, 0x02, 0x32, 0xd9, 0x04, 0x0a, 0x0b,
-	0x55, 0x73, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3a, 0x0a, 0x0a, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x34, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x55, 0x73,
-	0x65, 0x72, 0x12, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55,
-	0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x46, 0x0a,
-	0x0d, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x12, 0x18,
-	0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65,
-	0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4a, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
-	0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x1a, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74,
-	0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x1a, 0x1a, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
-	0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x3a, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12,
-	0x15, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55,
-	0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4b, 0x0a,
-	0x10, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65,
-	0x74, 0x12, 0x1b, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65,
-	0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18,
-	0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x00, 0x12, 0x4f, 0x0a, 0x11, 0x55, 0x70,
-	0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x12,
-	0x1c, 0x2e, 0x70, 0x62, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x50,
-	0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e,
-	0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63,
-	0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x38, 0x0a, 0x09, 0x4c,
-	0x6f, 0x67, 0x69, 0x6e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x6f,
-	0x67, 0x69, 0x6e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x13,
-	0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x30, 0x0a, 0x0a, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x55,
-	0x73, 0x65, 0x72, 0x12, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x55,
-	0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x09, 0x2e, 0x70, 0x62, 0x2e,
-	0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x42, 0x19, 0x5a, 0x17, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x74, 0x68, 0x65, 0x72, 0x61, 0x66, 0x66, 0x6c, 0x65, 0x2f,
-	0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x63,
+	0x68, 0x61, 0x69, 0x6e, 0x49, 0x44, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x07, 0x63, 0x68,
+	0x61, 0x69, 0x6e, 0x49, 0x44, 0x12, 0x18, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x22,
+	0x2f, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72,
+	0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44,
+	0x22, 0x34, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65,
+	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72,
+	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x03, 0x52, 0x08, 0x70, 0x72,
+	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x22, 0x57, 0x0a, 0x10, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x55,
+	0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73,
+	0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72,
+	0x49, 0x44, 0x12, 0x2b, 0x0a, 0x09, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0d, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
+	0x54, 0x79, 0x70, 0x65, 0x52, 0x09, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x22,
+	0x2b, 0x0a, 0x11, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x2b, 0x0a, 0x11,
+	0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x16, 0x0a, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x22, 0x07, 0x0a, 0x05, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x2a, 0x33, 0x0a, 0x09, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x12,
+	0x0b, 0x0a, 0x07, 0x44, 0x49, 0x53, 0x43, 0x4f, 0x52, 0x44, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08,
+	0x54, 0x45, 0x4c, 0x45, 0x47, 0x52, 0x41, 0x4d, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x54, 0x57,
+	0x49, 0x54, 0x54, 0x45, 0x52, 0x10, 0x02, 0x32, 0xbc, 0x04, 0x0a, 0x0b, 0x55, 0x73, 0x65, 0x72,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3c, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x70,
+	0x62, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x34, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
+	0x12, 0x12, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x46, 0x0a, 0x0d, 0x47,
+	0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x12, 0x18, 0x2e, 0x70,
+	0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x49, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72,
+	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x19, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x1a, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f,
+	0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a,
+	0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x15, 0x2e, 0x70,
+	0x62, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x13, 0x2e, 0x70, 0x62, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3c, 0x0a, 0x10, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x12, 0x1b,
+	0x2e, 0x70, 0x62, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x57, 0x61,
+	0x6c, 0x6c, 0x65, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x09, 0x2e, 0x70, 0x62,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x1c, 0x2e,
+	0x70, 0x62, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x50, 0x72, 0x6f,
+	0x6a, 0x65, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x09, 0x2e, 0x70, 0x62,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x09, 0x4c, 0x6f, 0x67, 0x69,
+	0x6e, 0x55, 0x73, 0x65, 0x72, 0x12, 0x14, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e,
+	0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15, 0x2e, 0x70, 0x62,
+	0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x30, 0x0a, 0x0a, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x12, 0x15, 0x2e, 0x70, 0x62, 0x2e, 0x4c, 0x6f, 0x67, 0x6f, 0x75, 0x74, 0x55, 0x73,
+	0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x09, 0x2e, 0x70, 0x62, 0x2e, 0x45,
+	0x6d, 0x70, 0x74, 0x79, 0x22, 0x00, 0x42, 0x19, 0x5a, 0x17, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x74, 0x68, 0x65, 0x72, 0x61, 0x66, 0x66, 0x6c, 0x65, 0x2f, 0x70,
+	0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -905,50 +1014,54 @@ func file_pb_raffle_proto_rawDescGZIP() []byte {
 }
 
 var file_pb_raffle_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_pb_raffle_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_pb_raffle_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_pb_raffle_proto_goTypes = []interface{}{
 	(LoginType)(0),                   // 0: pb.LoginType
 	(*CreateUserRequest)(nil),        // 1: pb.CreateUserRequest
 	(*GetUserRequest)(nil),           // 2: pb.GetUserRequest
 	(*GetUserResponse)(nil),          // 3: pb.GetUserResponse
-	(*GetUserWalletRequest)(nil),     // 4: pb.GetUserWalletRequest
-	(*GetUserWalletResponse)(nil),    // 5: pb.GetUserWalletResponse
-	(*GetUserProjectRequest)(nil),    // 6: pb.GetUserProjectRequest
-	(*GetUserProjectResponse)(nil),   // 7: pb.GetUserProjectResponse
-	(*UpdateUserRequest)(nil),        // 8: pb.UpdateUserRequest
-	(*UpdateUserWalletRequest)(nil),  // 9: pb.UpdateUserWalletRequest
-	(*UpdateUserProjectRequest)(nil), // 10: pb.UpdateUserProjectRequest
-	(*LoginUserRequest)(nil),         // 11: pb.LoginUserRequest
-	(*LogoutUserRequest)(nil),        // 12: pb.LogoutUserRequest
-	(*Empty)(nil),                    // 13: pb.Empty
+	(*UpdateUserRequest)(nil),        // 4: pb.UpdateUserRequest
+	(*UserWallet)(nil),               // 5: pb.UserWallet
+	(*CreateUserWalletRequest)(nil),  // 6: pb.CreateUserWalletRequest
+	(*GetUserWalletRequest)(nil),     // 7: pb.GetUserWalletRequest
+	(*GetUserWalletResponse)(nil),    // 8: pb.GetUserWalletResponse
+	(*CreateUserProjectRequest)(nil), // 9: pb.CreateUserProjectRequest
+	(*GetUserProjectRequest)(nil),    // 10: pb.GetUserProjectRequest
+	(*GetUserProjectResponse)(nil),   // 11: pb.GetUserProjectResponse
+	(*LoginUserRequest)(nil),         // 12: pb.LoginUserRequest
+	(*LoginUserResponse)(nil),        // 13: pb.LoginUserResponse
+	(*LogoutUserRequest)(nil),        // 14: pb.LogoutUserRequest
+	(*Empty)(nil),                    // 15: pb.Empty
 }
 var file_pb_raffle_proto_depIdxs = []int32{
 	0,  // 0: pb.CreateUserRequest.loginType:type_name -> pb.LoginType
 	0,  // 1: pb.GetUserResponse.loginType:type_name -> pb.LoginType
-	0,  // 2: pb.LoginUserRequest.loginType:type_name -> pb.LoginType
-	1,  // 3: pb.UserService.CreateUser:input_type -> pb.CreateUserRequest
-	2,  // 4: pb.UserService.GetUser:input_type -> pb.GetUserRequest
-	4,  // 5: pb.UserService.GetUserWallet:input_type -> pb.GetUserWalletRequest
-	7,  // 6: pb.UserService.GetUserProject:input_type -> pb.GetUserProjectResponse
-	8,  // 7: pb.UserService.UpdateUser:input_type -> pb.UpdateUserRequest
-	9,  // 8: pb.UserService.UpdateUserWallet:input_type -> pb.UpdateUserWalletRequest
-	10, // 9: pb.UserService.UpdateUserProject:input_type -> pb.UpdateUserProjectRequest
-	11, // 10: pb.UserService.LoginUser:input_type -> pb.LoginUserRequest
-	12, // 11: pb.UserService.LogoutUser:input_type -> pb.LogoutUserRequest
-	3,  // 12: pb.UserService.CreateUser:output_type -> pb.GetUserResponse
-	3,  // 13: pb.UserService.GetUser:output_type -> pb.GetUserResponse
-	5,  // 14: pb.UserService.GetUserWallet:output_type -> pb.GetUserWalletResponse
-	7,  // 15: pb.UserService.GetUserProject:output_type -> pb.GetUserProjectResponse
-	3,  // 16: pb.UserService.UpdateUser:output_type -> pb.GetUserResponse
-	4,  // 17: pb.UserService.UpdateUserWallet:output_type -> pb.GetUserWalletRequest
-	7,  // 18: pb.UserService.UpdateUserProject:output_type -> pb.GetUserProjectResponse
-	3,  // 19: pb.UserService.LoginUser:output_type -> pb.GetUserResponse
-	13, // 20: pb.UserService.LogoutUser:output_type -> pb.Empty
-	12, // [12:21] is the sub-list for method output_type
-	3,  // [3:12] is the sub-list for method input_type
-	3,  // [3:3] is the sub-list for extension type_name
-	3,  // [3:3] is the sub-list for extension extendee
-	0,  // [0:3] is the sub-list for field type_name
+	5,  // 2: pb.CreateUserWalletRequest.wallet:type_name -> pb.UserWallet
+	5,  // 3: pb.GetUserWalletResponse.wallets:type_name -> pb.UserWallet
+	0,  // 4: pb.LoginUserRequest.loginType:type_name -> pb.LoginType
+	1,  // 5: pb.UserService.CreateUser:input_type -> pb.CreateUserRequest
+	2,  // 6: pb.UserService.GetUser:input_type -> pb.GetUserRequest
+	7,  // 7: pb.UserService.GetUserWallet:input_type -> pb.GetUserWalletRequest
+	10, // 8: pb.UserService.GetUserProject:input_type -> pb.GetUserProjectRequest
+	4,  // 9: pb.UserService.UpdateUser:input_type -> pb.UpdateUserRequest
+	6,  // 10: pb.UserService.CreateUserWallet:input_type -> pb.CreateUserWalletRequest
+	9,  // 11: pb.UserService.CreateUserProject:input_type -> pb.CreateUserProjectRequest
+	12, // 12: pb.UserService.LoginUser:input_type -> pb.LoginUserRequest
+	14, // 13: pb.UserService.LogoutUser:input_type -> pb.LogoutUserRequest
+	13, // 14: pb.UserService.CreateUser:output_type -> pb.LoginUserResponse
+	3,  // 15: pb.UserService.GetUser:output_type -> pb.GetUserResponse
+	8,  // 16: pb.UserService.GetUserWallet:output_type -> pb.GetUserWalletResponse
+	11, // 17: pb.UserService.GetUserProject:output_type -> pb.GetUserProjectResponse
+	3,  // 18: pb.UserService.UpdateUser:output_type -> pb.GetUserResponse
+	15, // 19: pb.UserService.CreateUserWallet:output_type -> pb.Empty
+	15, // 20: pb.UserService.CreateUserProject:output_type -> pb.Empty
+	13, // 21: pb.UserService.LoginUser:output_type -> pb.LoginUserResponse
+	15, // 22: pb.UserService.LogoutUser:output_type -> pb.Empty
+	14, // [14:23] is the sub-list for method output_type
+	5,  // [5:14] is the sub-list for method input_type
+	5,  // [5:5] is the sub-list for extension type_name
+	5,  // [5:5] is the sub-list for extension extendee
+	0,  // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_pb_raffle_proto_init() }
@@ -994,54 +1107,6 @@ func file_pb_raffle_proto_init() {
 			}
 		}
 		file_pb_raffle_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetUserWalletRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_pb_raffle_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetUserWalletResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_pb_raffle_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetUserProjectRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_pb_raffle_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetUserProjectResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_pb_raffle_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateUserRequest); i {
 			case 0:
 				return &v.state
@@ -1053,8 +1118,56 @@ func file_pb_raffle_proto_init() {
 				return nil
 			}
 		}
+		file_pb_raffle_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserWallet); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pb_raffle_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateUserWalletRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pb_raffle_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserWalletRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pb_raffle_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserWalletResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 		file_pb_raffle_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateUserWalletRequest); i {
+			switch v := v.(*CreateUserProjectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1066,7 +1179,7 @@ func file_pb_raffle_proto_init() {
 			}
 		}
 		file_pb_raffle_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateUserProjectRequest); i {
+			switch v := v.(*GetUserProjectRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1078,7 +1191,7 @@ func file_pb_raffle_proto_init() {
 			}
 		}
 		file_pb_raffle_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LoginUserRequest); i {
+			switch v := v.(*GetUserProjectResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1090,7 +1203,7 @@ func file_pb_raffle_proto_init() {
 			}
 		}
 		file_pb_raffle_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*LogoutUserRequest); i {
+			switch v := v.(*LoginUserRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1102,6 +1215,30 @@ func file_pb_raffle_proto_init() {
 			}
 		}
 		file_pb_raffle_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LoginUserResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pb_raffle_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LogoutUserRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_pb_raffle_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Empty); i {
 			case 0:
 				return &v.state
@@ -1120,7 +1257,7 @@ func file_pb_raffle_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_pb_raffle_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   13,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -1147,14 +1284,14 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type UserServiceClient interface {
-	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
+	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*LoginUserResponse, error)
 	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
 	GetUserWallet(ctx context.Context, in *GetUserWalletRequest, opts ...grpc.CallOption) (*GetUserWalletResponse, error)
-	GetUserProject(ctx context.Context, in *GetUserProjectResponse, opts ...grpc.CallOption) (*GetUserProjectResponse, error)
+	GetUserProject(ctx context.Context, in *GetUserProjectRequest, opts ...grpc.CallOption) (*GetUserProjectResponse, error)
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
-	UpdateUserWallet(ctx context.Context, in *UpdateUserWalletRequest, opts ...grpc.CallOption) (*GetUserWalletRequest, error)
-	UpdateUserProject(ctx context.Context, in *UpdateUserProjectRequest, opts ...grpc.CallOption) (*GetUserProjectResponse, error)
-	LoginUser(ctx context.Context, in *LoginUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
+	CreateUserWallet(ctx context.Context, in *CreateUserWalletRequest, opts ...grpc.CallOption) (*Empty, error)
+	CreateUserProject(ctx context.Context, in *CreateUserProjectRequest, opts ...grpc.CallOption) (*Empty, error)
+	LoginUser(ctx context.Context, in *LoginUserRequest, opts ...grpc.CallOption) (*LoginUserResponse, error)
 	LogoutUser(ctx context.Context, in *LogoutUserRequest, opts ...grpc.CallOption) (*Empty, error)
 }
 
@@ -1166,8 +1303,8 @@ func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 
-func (c *userServiceClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
-	out := new(GetUserResponse)
+func (c *userServiceClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*LoginUserResponse, error) {
+	out := new(LoginUserResponse)
 	err := c.cc.Invoke(ctx, "/pb.UserService/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1193,7 +1330,7 @@ func (c *userServiceClient) GetUserWallet(ctx context.Context, in *GetUserWallet
 	return out, nil
 }
 
-func (c *userServiceClient) GetUserProject(ctx context.Context, in *GetUserProjectResponse, opts ...grpc.CallOption) (*GetUserProjectResponse, error) {
+func (c *userServiceClient) GetUserProject(ctx context.Context, in *GetUserProjectRequest, opts ...grpc.CallOption) (*GetUserProjectResponse, error) {
 	out := new(GetUserProjectResponse)
 	err := c.cc.Invoke(ctx, "/pb.UserService/GetUserProject", in, out, opts...)
 	if err != nil {
@@ -1211,26 +1348,26 @@ func (c *userServiceClient) UpdateUser(ctx context.Context, in *UpdateUserReques
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateUserWallet(ctx context.Context, in *UpdateUserWalletRequest, opts ...grpc.CallOption) (*GetUserWalletRequest, error) {
-	out := new(GetUserWalletRequest)
-	err := c.cc.Invoke(ctx, "/pb.UserService/UpdateUserWallet", in, out, opts...)
+func (c *userServiceClient) CreateUserWallet(ctx context.Context, in *CreateUserWalletRequest, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/pb.UserService/CreateUserWallet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) UpdateUserProject(ctx context.Context, in *UpdateUserProjectRequest, opts ...grpc.CallOption) (*GetUserProjectResponse, error) {
-	out := new(GetUserProjectResponse)
-	err := c.cc.Invoke(ctx, "/pb.UserService/UpdateUserProject", in, out, opts...)
+func (c *userServiceClient) CreateUserProject(ctx context.Context, in *CreateUserProjectRequest, opts ...grpc.CallOption) (*Empty, error) {
+	out := new(Empty)
+	err := c.cc.Invoke(ctx, "/pb.UserService/CreateUserProject", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *userServiceClient) LoginUser(ctx context.Context, in *LoginUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
-	out := new(GetUserResponse)
+func (c *userServiceClient) LoginUser(ctx context.Context, in *LoginUserRequest, opts ...grpc.CallOption) (*LoginUserResponse, error) {
+	out := new(LoginUserResponse)
 	err := c.cc.Invoke(ctx, "/pb.UserService/LoginUser", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -1249,14 +1386,14 @@ func (c *userServiceClient) LogoutUser(ctx context.Context, in *LogoutUserReques
 
 // UserServiceServer is the server API for UserService service.
 type UserServiceServer interface {
-	CreateUser(context.Context, *CreateUserRequest) (*GetUserResponse, error)
+	CreateUser(context.Context, *CreateUserRequest) (*LoginUserResponse, error)
 	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
 	GetUserWallet(context.Context, *GetUserWalletRequest) (*GetUserWalletResponse, error)
-	GetUserProject(context.Context, *GetUserProjectResponse) (*GetUserProjectResponse, error)
+	GetUserProject(context.Context, *GetUserProjectRequest) (*GetUserProjectResponse, error)
 	UpdateUser(context.Context, *UpdateUserRequest) (*GetUserResponse, error)
-	UpdateUserWallet(context.Context, *UpdateUserWalletRequest) (*GetUserWalletRequest, error)
-	UpdateUserProject(context.Context, *UpdateUserProjectRequest) (*GetUserProjectResponse, error)
-	LoginUser(context.Context, *LoginUserRequest) (*GetUserResponse, error)
+	CreateUserWallet(context.Context, *CreateUserWalletRequest) (*Empty, error)
+	CreateUserProject(context.Context, *CreateUserProjectRequest) (*Empty, error)
+	LoginUser(context.Context, *LoginUserRequest) (*LoginUserResponse, error)
 	LogoutUser(context.Context, *LogoutUserRequest) (*Empty, error)
 }
 
@@ -1264,7 +1401,7 @@ type UserServiceServer interface {
 type UnimplementedUserServiceServer struct {
 }
 
-func (*UnimplementedUserServiceServer) CreateUser(context.Context, *CreateUserRequest) (*GetUserResponse, error) {
+func (*UnimplementedUserServiceServer) CreateUser(context.Context, *CreateUserRequest) (*LoginUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
 func (*UnimplementedUserServiceServer) GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error) {
@@ -1273,19 +1410,19 @@ func (*UnimplementedUserServiceServer) GetUser(context.Context, *GetUserRequest)
 func (*UnimplementedUserServiceServer) GetUserWallet(context.Context, *GetUserWalletRequest) (*GetUserWalletResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserWallet not implemented")
 }
-func (*UnimplementedUserServiceServer) GetUserProject(context.Context, *GetUserProjectResponse) (*GetUserProjectResponse, error) {
+func (*UnimplementedUserServiceServer) GetUserProject(context.Context, *GetUserProjectRequest) (*GetUserProjectResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserProject not implemented")
 }
 func (*UnimplementedUserServiceServer) UpdateUser(context.Context, *UpdateUserRequest) (*GetUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
 }
-func (*UnimplementedUserServiceServer) UpdateUserWallet(context.Context, *UpdateUserWalletRequest) (*GetUserWalletRequest, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserWallet not implemented")
+func (*UnimplementedUserServiceServer) CreateUserWallet(context.Context, *CreateUserWalletRequest) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserWallet not implemented")
 }
-func (*UnimplementedUserServiceServer) UpdateUserProject(context.Context, *UpdateUserProjectRequest) (*GetUserProjectResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateUserProject not implemented")
+func (*UnimplementedUserServiceServer) CreateUserProject(context.Context, *CreateUserProjectRequest) (*Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUserProject not implemented")
 }
-func (*UnimplementedUserServiceServer) LoginUser(context.Context, *LoginUserRequest) (*GetUserResponse, error) {
+func (*UnimplementedUserServiceServer) LoginUser(context.Context, *LoginUserRequest) (*LoginUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method LoginUser not implemented")
 }
 func (*UnimplementedUserServiceServer) LogoutUser(context.Context, *LogoutUserRequest) (*Empty, error) {
@@ -1351,7 +1488,7 @@ func _UserService_GetUserWallet_Handler(srv interface{}, ctx context.Context, de
 }
 
 func _UserService_GetUserProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserProjectResponse)
+	in := new(GetUserProjectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -1363,7 +1500,7 @@ func _UserService_GetUserProject_Handler(srv interface{}, ctx context.Context, d
 		FullMethod: "/pb.UserService/GetUserProject",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetUserProject(ctx, req.(*GetUserProjectResponse))
+		return srv.(UserServiceServer).GetUserProject(ctx, req.(*GetUserProjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1386,38 +1523,38 @@ func _UserService_UpdateUser_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateUserWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateUserWalletRequest)
+func _UserService_CreateUserWallet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserWalletRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateUserWallet(ctx, in)
+		return srv.(UserServiceServer).CreateUserWallet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.UserService/UpdateUserWallet",
+		FullMethod: "/pb.UserService/CreateUserWallet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateUserWallet(ctx, req.(*UpdateUserWalletRequest))
+		return srv.(UserServiceServer).CreateUserWallet(ctx, req.(*CreateUserWalletRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateUserProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateUserProjectRequest)
+func _UserService_CreateUserProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserProjectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateUserProject(ctx, in)
+		return srv.(UserServiceServer).CreateUserProject(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.UserService/UpdateUserProject",
+		FullMethod: "/pb.UserService/CreateUserProject",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateUserProject(ctx, req.(*UpdateUserProjectRequest))
+		return srv.(UserServiceServer).CreateUserProject(ctx, req.(*CreateUserProjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1483,12 +1620,12 @@ var _UserService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _UserService_UpdateUser_Handler,
 		},
 		{
-			MethodName: "UpdateUserWallet",
-			Handler:    _UserService_UpdateUserWallet_Handler,
+			MethodName: "CreateUserWallet",
+			Handler:    _UserService_CreateUserWallet_Handler,
 		},
 		{
-			MethodName: "UpdateUserProject",
-			Handler:    _UserService_UpdateUserProject_Handler,
+			MethodName: "CreateUserProject",
+			Handler:    _UserService_CreateUserProject_Handler,
 		},
 		{
 			MethodName: "LoginUser",

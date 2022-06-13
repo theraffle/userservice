@@ -6,14 +6,14 @@ option go_package = "github.com/theraffle/pb";
 // -----------------User Service--------------------
 
 service UserService {
-  rpc CreateUser (CreateUserRequest) returns (GetUserResponse) {}
+  rpc CreateUser (CreateUserRequest) returns (LoginUserResponse) {}
   rpc GetUser (GetUserRequest) returns (GetUserResponse) {}
   rpc GetUserWallet (GetUserWalletRequest) returns (GetUserWalletResponse) {}
-  rpc GetUserProject (GetUserProjectResponse) returns (GetUserProjectResponse) {}
+  rpc GetUserProject (GetUserProjectRequest) returns (GetUserProjectResponse) {}
   rpc UpdateUser (UpdateUserRequest) returns (GetUserResponse) {}
-  rpc UpdateUserWallet (UpdateUserWalletRequest) returns (GetUserWalletRequest) {}
-  rpc UpdateUserProject (UpdateUserProjectRequest) returns (GetUserProjectResponse) {}
-  rpc LoginUser (LoginUserRequest) returns (GetUserResponse) {}
+  rpc CreateUserWallet (CreateUserWalletRequest) returns (Empty) {}
+  rpc CreateUserProject (CreateUserProjectRequest) returns (Empty) {}
+  rpc LoginUser (LoginUserRequest) returns (LoginUserResponse) {}
   rpc LogoutUser (LogoutUserRequest) returns (Empty) {}
 }
 
@@ -34,22 +34,6 @@ message GetUserResponse {
   string twitterID = 5;
 }
 
-message GetUserWalletRequest {
-  int64 userID = 1;
-}
-
-message GetUserWalletResponse {
-  repeated string wallets = 1;
-}
-
-message GetUserProjectRequest {
-  int64 userID = 1;
-}
-
-message GetUserProjectResponse {
-  repeated string projects = 1;
-}
-
 message UpdateUserRequest {
   int64 userID = 1;
   string telegramID = 2;
@@ -57,21 +41,46 @@ message UpdateUserRequest {
   string twitterID = 4;
 }
 
-message UpdateUserWalletRequest {
+message UserWallet{
   int64 userID = 1;
   int64 chainID = 2;
   string address = 3;
 }
 
-message UpdateUserProjectRequest {
+message CreateUserWalletRequest {
+  UserWallet wallet = 1;
+}
+
+message GetUserWalletRequest {
+  int64 userID = 1;
+}
+
+message GetUserWalletResponse {
+  repeated UserWallet wallets = 1;
+}
+
+message CreateUserProjectRequest {
   int64 userID = 1;
   int64 projectID = 2;
-  int64 walletID = 3;
+  int64 chainID = 3;
+  string address = 4;
+}
+
+message GetUserProjectRequest {
+  int64 userID = 1;
+}
+
+message GetUserProjectResponse {
+  repeated int64 projects = 1;
 }
 
 message LoginUserRequest {
   string userID = 1;
   LoginType loginType = 2;
+}
+
+message LoginUserResponse {
+  int64 userID = 1;
 }
 
 message LogoutUserRequest {
