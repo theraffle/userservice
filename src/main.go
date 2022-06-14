@@ -92,7 +92,12 @@ func (u *userService) CreateUser(ctx context.Context, request *pb.CreateUserRequ
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	query := fmt.Sprintf("INSERT INTO user(type, %s) VALUES(%d, '%s')", loginType[request.LoginType], request.LoginType, request.UserID)
 	result, err := db.ExecContext(ctx, query)
@@ -121,7 +126,12 @@ func (u *userService) GetUser(ctx context.Context, request *pb.GetUserRequest) (
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	query := fmt.Sprintf("SELECT * FROM user WHERE id = %d", request.UserID)
 	row := db.QueryRowContext(ctx, query)
@@ -143,7 +153,12 @@ func (u *userService) LoginUser(ctx context.Context, request *pb.LoginUserReques
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	if request.LoginType > 2 {
 		err = fmt.Errorf("wrong login type")
@@ -182,7 +197,12 @@ func (u *userService) UpdateUser(ctx context.Context, request *pb.UpdateUserRequ
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	query := fmt.Sprintf("UPDATE user SET telegram = '%s', discord = '%s', twitter = '%s' WHERE id = %d", request.TelegramID, request.DiscordID, request.TwitterID, request.UserID)
 	result, err := db.ExecContext(ctx, query)
@@ -212,7 +232,12 @@ func (u *userService) CreateUserWallet(ctx context.Context, request *pb.CreateUs
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	_, err = u.GetUser(ctx, &pb.GetUserRequest{UserID: request.Wallet.UserID})
 	if err != nil {
@@ -242,7 +267,12 @@ func (u *userService) GetUserWallet(ctx context.Context, request *pb.GetUserWall
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	query := fmt.Sprintf("SELECT * FROM user_wallet WHERE user_id = %d", request.UserID)
 	rows, err := db.QueryContext(ctx, query)
@@ -269,7 +299,12 @@ func (u *userService) CreateUserProject(ctx context.Context, request *pb.CreateU
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	_, err = u.GetUser(ctx, &pb.GetUserRequest{UserID: request.UserID})
 	if err != nil {
@@ -299,7 +334,12 @@ func (u *userService) GetUserProject(ctx context.Context, request *pb.GetUserPro
 		log.Error(err, "database connection error")
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Error(err, "db closing error")
+			os.Exit(1)
+		}
+	}()
 
 	query := fmt.Sprintf("SELECT * FROM user_project WHERE user_id = %d", request.UserID)
 	rows, err := db.QueryContext(ctx, query)

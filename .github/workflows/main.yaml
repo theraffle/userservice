@@ -20,4 +20,4 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         with:
           version: v1.43
-          args: --timeout 1h0m0s
+          args: -v -E gofmt -E golint -E gocyclo -E misspell --timeout 1h0m0s
