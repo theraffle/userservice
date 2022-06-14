@@ -12,11 +12,12 @@ jobs:
   test_lint:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-go@v2
+      - uses: actions/setup-go@v3
         with:
           go-version: 1.17.x
-      - uses: golangci/golangci-lint-action@v2.2.1
+      - uses: actions/checkout@v3
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v3
         with:
-          version: v1.29
-          args: -v -E gofmt -E golint -E gocyclo -E misspell --timeout 1h0m0s
+          version: v1.43
+          args: --timeout 1h0m0s
