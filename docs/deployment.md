@@ -32,7 +32,7 @@ This is a guide to deploy UserService on your cluster. The contents are as follo
    
 2. Apply `userservice.yaml`
    ```bash
-   kubectl apply -f ./kubernetes-manifests/userservice.yaml
+   kubectl apply -f ./kubernetes-manifests/release.yaml
    ```
 3. Wait until `userservice` pod is ready
    ```bash

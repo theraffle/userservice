@@ -18,3 +18,7 @@ docker-push:
 # Test code lint
 test-lint:
 	golangci-lint run ./... -v
+
+# Generate manifests.
+manifests:
+	bash ./hack/release-manifest.sh $(VERSION) $(REGISTRY)
