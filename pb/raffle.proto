@@ -110,3 +110,45 @@ enum LoginType {
   TELEGRAM = 1;
   TWITTER = 2;
 }
+
+// -----------------Project Service--------------------
+
+service ProjectService {
+  rpc CreateProject (CreateProjectRequest) returns (CreateProjectResponse) {}
+  rpc GetProject (GetProjectRequest) returns (GetProjectResponse) {}
+  rpc GetAllProjects (Empty) returns (GetAllProjectResponse) {}
+  rpc UpdateProject (UpdateProjectRequest) returns (GetProjectResponse) {}
+}
+
+message Project{
+  int64 projectID = 1;
+  string projectName = 2;
+  int64 chainID = 3;
+  string raffleContract = 4;
+}
+
+message CreateProjectRequest {
+  string projectName = 1;
+  int64 chainID = 2;
+  string raffleContract = 3;
+}
+
+message CreateProjectResponse {
+  int64 projectID = 1;
+}
+
+message GetProjectRequest {
+  int64 projectID = 1;
+}
+
+message GetProjectResponse {
+  Project project = 1;
+}
+
+message GetAllProjectResponse {
+  repeated Project projects = 1;
+}
+
+message UpdateProjectRequest {
+  int64 projectID = 1;
+}
