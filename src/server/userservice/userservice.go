@@ -223,7 +223,7 @@ func (u *UserService) GetUserWallet(ctx context.Context, request *pb.GetUserWall
 	}
 	var wallets []*pb.UserWallet
 	for rows.Next() {
-		var wallet *pb.UserWallet
+		wallet := &pb.UserWallet{}
 		err = rows.Scan(&wallet.UserID, &wallet.ChainID, &wallet.Address)
 		if err != nil {
 			log.Error(err, "get user wallet scan error")
@@ -253,8 +253,9 @@ func (u *UserService) CreateUserProject(ctx context.Context, request *pb.CreateU
 		log.Error(err, fmt.Sprintf("cannot find user id %d", request.UserID))
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	}
+	// TODO: Check Project existence
 
-	query := fmt.Sprintf("INSERT INTO user_project(user_id, prject_id, chain_id, address) VALUES(%d, %d, %d, '%s')", request.UserID, request.ProjectID, request.ChainID, request.Address)
+	query := fmt.Sprintf("INSERT INTO user_project(user_id, project_id, chain_id, address) VALUES(%d, %d, %d, '%s')", request.UserID, request.ProjectID, request.ChainID, request.Address)
 	result, err := db.ExecContext(ctx, query)
 	if err != nil {
 		log.Error(err, "create user project error")
@@ -284,7 +285,7 @@ func (u *UserService) GetUserProject(ctx context.Context, request *pb.GetUserPro
 		}
 	}()
 
-	query := fmt.Sprintf("SELECT * FROM user_project WHERE user_id = %d", request.UserID)
+	query := fmt.Sprintf("SELECT project_id FROM user_project WHERE user_id = %d", request.UserID)
 	rows, err := db.QueryContext(ctx, query)
 	if err != nil {
 		log.Error(err, "get project query error")
@@ -292,7 +293,7 @@ func (u *UserService) GetUserProject(ctx context.Context, request *pb.GetUserPro
 	}
 	var projects []int64
 	for rows.Next() {
-		var project int64
+		var project int64 = 0
 		err = rows.Scan(&project)
 		if err != nil {
 			log.Error(err, "get user project scan error")
