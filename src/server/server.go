@@ -2,8 +2,8 @@ package server
 
 import (
 	"fmt"
-	"github.com/theraffle/backend/src/genproto/pb"
-	"github.com/theraffle/backend/src/server/userservice"
+	"github.com/theraffle/userservice/src/genproto/pb"
+	"github.com/theraffle/userservice/src/server/userservice"
 	"google.golang.org/grpc"
 	"net"
 	"os"

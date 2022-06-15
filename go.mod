@@ -1,4 +1,4 @@
-module github.com/theraffle/backend
+module github.com/theraffle/userservice
 
 go 1.17
 

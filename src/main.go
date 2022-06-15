@@ -18,8 +18,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/theraffle/backend/src/logrotate"
-	"github.com/theraffle/backend/src/server"
+	"github.com/theraffle/userservice/src/logrotate"
+	"github.com/theraffle/userservice/src/server"
 	"io"
 	"os"
 	ctrl "sigs.k8s.io/controller-runtime"
